@@ -15,7 +15,6 @@ From: richelbilderbeek/default/plinkr:0.17.2.1
     conda update conda
 
     Rscript -e 'install.packages("reticulate")'
-    Rscript -e 'reticulate::conda_create(envname = "/opt/ormr")'
     Rscript -e 'reticulate::conda_list()'
     Rscript -e 'reticulate::conda_create(envname = "/opt/ormr")'
     Rscript -e 'reticulate::conda_list()'

@@ -1,5 +1,6 @@
 library(reticulate)
 
+
 # From https://github.com/rstudio/reticulate/issues/1044#issuecomment-896248800
 Sys.setenv(PYTHONUSERBASE = "/opt/ormr/bin/python")
 Sys.setenv(PYTHONPATH = "/opt/ormr/bin")
@@ -11,7 +12,11 @@ download.file(
   destfile = "scipy_example.py"  
 )
 
-list.files(recursive = TRUE)
+message("Files in local folder: ")
+list.files()
+message("Files in 'scripts' folder: ")
+list.files(path = "scripts", full = TRUE, recursive = TRUE)
+
 all_files <- list.files(recursive = TRUE, full.names = TRUE)
 message("all_files: ")
 message(all_files)
