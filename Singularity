@@ -13,7 +13,7 @@ From: richelbilderbeek/default/plinkr:0.17.2.1
     # Install Miniconda
     wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     bash Miniconda3-latest-Linux-x86_64.sh -b -p miniconda
-    # export PATH=/miniconda/bin:$PATH
+    export PATH=/miniconda/bin:$PATH
     rm Miniconda3-latest-Linux-x86_64.sh
     conda update conda
 
