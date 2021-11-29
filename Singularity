@@ -69,13 +69,13 @@ ormr_report(ormr_folder_name = "/opt/ormr")
 
     AUTHOR Richel J.C. Bilderbeek
 
-    NAME ormr
+    NAME reticulate_on_singularity
 
-    DESCRIPTION The ormr R package, with PLINK and the minimal ormr Python packages installed
+    DESCRIPTION Use reticulate on Singularity
 
     USAGE simply run the container
 
-    URL https://github.com/richelbilderbeek/ormr
+    URL https://github.com/richelbilderbeek/reticulate_on_singularity
 
-    VERSION 0.6.0
+    VERSION 0.1.0
 
