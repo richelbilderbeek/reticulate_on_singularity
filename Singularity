@@ -21,6 +21,7 @@ From: richelbilderbeek/default/plinkr:0.17.2.1
     Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
     Rscript -e 'reticulate::use_python(python = reticulate:::python_binary_path("/opt/ormr"), required = TRUE)'
     Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
+    Rscript -e 'reticulate::conda_install(packages = "scipy", envname = "/opt/ormr")'
 
 # 'ormr' needs this?
 # export PATH=/miniconda/bin:$PATH
