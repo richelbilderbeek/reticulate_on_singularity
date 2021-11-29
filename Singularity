@@ -15,7 +15,7 @@ From: richelbilderbeek/default/plinkr:0.17.2.1
     bash Miniconda3-latest-Linux-x86_64.sh -b -p miniconda
     export PATH=/miniconda/bin:$PATH
     rm Miniconda3-latest-Linux-x86_64.sh
-    conda update conda
+    # conda update conda
 
     # Install reticulate
     Rscript -e 'install.packages("reticulate")'
