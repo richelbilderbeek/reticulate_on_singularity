@@ -6,9 +6,15 @@ Sys.setenv(PYTHONPATH = "/opt/ormr/bin")
 reticulate::use_condaenv(condaenv = "/opt/ormr")
 reticulate::use_python(python = reticulate:::python_binary_path("/opt/ormr"), required = TRUE)
 
-list.files(recursive = TRUE)
+download.file(
+  url = "https://raw.githubusercontent.com/richelbilderbeek/reticulate_on_singularity/master/scripts/scipy_example.py",
+  destfile = "scipy_example.py"  
+)
 
+list.files(recursive = TRUE)
 all_files <- list.files(recursive = TRUE, full.names = TRUE)
+message("all_files: ")
+message(all_files)
 
 python_filename <- stringr::str_subset(
   string = all_files,
