@@ -50,7 +50,7 @@ exec R --vanilla --silent --no-echo "$@"
 
 %help
 
-This container has the R package ormr installed.
+This container shows how to use reticulate to work with Python packages
 
 To make the container run a script called, e.g. `script.R`, do:
 
@@ -58,12 +58,8 @@ To make the container run a script called, e.g. `script.R`, do:
 cat script.R | ./ormr.sif
 ```
 
-Within the script, set `ormr_folder_name` to `"/opt/ormr"`, for example:
-
-```
-library(ormr)
-ormr_report(ormr_folder_name = "/opt/ormr")
-```
+Use the 'ormr' R package (https://github.com/richelbilderbeek/ormr) 
+to do this simpler.
 
 %labels
 
