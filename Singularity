@@ -14,12 +14,14 @@ From: richelbilderbeek/default/plinkr:0.17.2.1
     rm Miniconda3-latest-Linux-x86_64.sh
     conda update conda
 
-    Rscript -e 'install.packages("semver")'
     Rscript -e 'install.packages("reticulate")'
-    Rscript -e 'remotes::install_github("richelbilderbeek/ormr")'
+    Rscript -e 'reticulate::conda_create(envname = "/opt/ormr")'
+    Rscript -e 'reticulate::conda_list()'
     Rscript -e 'ormr::create_conda_env(ormr_folder_name = "/opt/ormr")'
-    Rscript -e 'ormr::install_python_package(ormr_folder_name = "/opt/ormr", package_name = "scipy")'
-    Rscript -e 'ormr::ormr_report(ormr_folder_name = "/opt/ormr")'
+    Rscript -e 'reticulate::conda_list()'
+    Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
+    Rscript -e 'reticulate::use_python(python = reticulate:::python_binary_path("/opt/ormr"), required = TRUE)'
+    Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
 
 # 'ormr' needs this?
 # export PATH=/miniconda/bin:$PATH
@@ -42,30 +44,10 @@ exec R --vanilla --silent --no-echo "$@"
     echo "Show me '/opt/ormr'"
     echo "*******************"
     ls /opt/ormr
-    echo "***********"
-    echo "Show plinkr"
-    echo "***********"
-    Rscript -e 'plinkr::plinkr_report(plink_optionses = plinkr::create_plink_optionses(plink_folder = "/opt/plinkr"))'
-    echo "********************************"
-    echo "Run 'ormr::ormr_report' (before)"
-    echo "********************************"
-    Rscript -e 'ormr::ormr_report(ormr_folder_name = "/opt/ormr")'
     echo "****************************"
-    echo "Run 'ormr::create_conda_env'"
+    echo "Run 'reticulate::use_condaenv'"
     echo "****************************"
-    Rscript -e 'ormr::create_conda_env(ormr_folder_name = "/opt/ormr")'
-    echo "*******************************"
-    echo "Run 'ormr::ormr_report' (after)"
-    echo "*******************************"
-    Rscript -e 'ormr::ormr_report(ormr_folder_name = "/opt/ormr")'
-    echo "******************************"
-    echo "Show that the Conda env exists"
-    echo "******************************"
-    Rscript -e 'ormr::does_conda_env_exists(ormr_folder_name = "/opt/ormr")'
-    echo "******************************"
-    echo "Show that 'scipy' is installed"
-    echo "******************************"
-    Rscript -e 'ormr::is_python_package_installed(ormr_folder_name = "/opt/ormr", package_name = "scipy")'
+    Rscript -e 'reticulate::use_condaenv(reticulate::use_condaenv = "/opt/ormr")'
 
 %help
 
