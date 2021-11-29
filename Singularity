@@ -47,7 +47,7 @@ exec R --vanilla --silent --no-echo "$@"
     echo "****************************"
     echo "Run 'reticulate::use_condaenv'"
     echo "****************************"
-    Rscript -e 'reticulate::use_condaenv(reticulate::use_condaenv = "/opt/ormr")'
+    Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
 
 %help
 
