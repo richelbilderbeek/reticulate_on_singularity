@@ -15,13 +15,11 @@ From: richelbilderbeek/default/plinkr:0.17.2.1
     conda update conda
 
     Rscript -e 'install.packages("reticulate")'
-    Rscript -e 'reticulate::conda_list()'
     Rscript -e 'reticulate::conda_create(envname = "/opt/ormr")'
-    Rscript -e 'reticulate::conda_list()'
     Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
     Rscript -e 'reticulate::use_python(python = reticulate:::python_binary_path("/opt/ormr"), required = TRUE)'
-    Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
     Rscript -e 'reticulate::conda_install(packages = "scipy", envname = "/opt/ormr")'
+    Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
 
 %runscript
 exec R --vanilla --silent --no-echo "$@"
@@ -43,10 +41,6 @@ exec R --vanilla --silent --no-echo "$@"
     echo "List packages"
     echo "*************"
     Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
-    echo "*************"
-    echo "List packages after activating condaenv"
-    echo "*************"
-    Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr"); reticulate:::conda_list_packages(envname = "/opt/ormr")'
 
 %help
 
