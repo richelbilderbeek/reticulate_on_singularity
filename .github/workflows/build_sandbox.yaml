@@ -41,5 +41,5 @@ jobs:
         run: cat scripts/demo_container.R
 
       - name: Run container
-        run: cat scripts/demo_container.R | ./sandbox.sif
+        run: cat scripts/demo_container.R | singularity run sandbox.sif/
 
