@@ -2,19 +2,25 @@ Bootstrap: library
 From: richelbilderbeek/default/plinkr:0.17.2.1
 
 %post
+    # Install apt
     sed -i 's/$/ universe/' /etc/apt/sources.list
     apt-get -y update
+
+    # Install python3
     apt-get -y install python3 wget
     apt-get -y clean
 
-    # 'ormr' needs this
+    # Install Miniconda
     wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
     bash Miniconda3-latest-Linux-x86_64.sh -b -p miniconda
     export PATH=/miniconda/bin:$PATH
     rm Miniconda3-latest-Linux-x86_64.sh
     conda update conda
 
+    # Install reticulate
     Rscript -e 'install.packages("reticulate")'
+
+    # Create the Conda environment at a system folder
     Rscript -e 'reticulate::conda_create(envname = "/opt/ormr")'
     Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
     Rscript -e 'reticulate::use_python(python = reticulate:::python_binary_path("/opt/ormr"), required = TRUE)'
