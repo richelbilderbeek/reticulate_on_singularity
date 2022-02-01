@@ -25,28 +25,28 @@ From: richelbilderbeek/default/plinkr:0.18.0.2
     Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
     Rscript -e 'reticulate::use_python(python = reticulate:::python_binary_path("/opt/ormr"), required = TRUE)'
     Rscript -e 'reticulate::conda_install(packages = "scipy", envname = "/opt/ormr")'
-    #TODO_ADD_AGAIN Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
+    Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
 
 %runscript
 exec R --vanilla --silent --no-echo "$@"
 
 %test
-    #TODO_ADD_AGAIN echo "**************"
-    #TODO_ADD_AGAIN echo "Show me '/opt'"
-    #TODO_ADD_AGAIN echo "**************"
-    #TODO_ADD_AGAIN ls /opt
-    #TODO_ADD_AGAIN echo "*******************"
-    #TODO_ADD_AGAIN echo "Show me '/opt/ormr'"
-    #TODO_ADD_AGAIN echo "*******************"
-    #TODO_ADD_AGAIN ls /opt/ormr
-    #TODO_ADD_AGAIN echo "****************************"
-    #TODO_ADD_AGAIN echo "Run 'reticulate::use_condaenv'"
-    #TODO_ADD_AGAIN echo "****************************"
-    #TODO_ADD_AGAIN Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
-    #TODO_ADD_AGAIN echo "*************"
-    #TODO_ADD_AGAIN echo "List packages"
-    #TODO_ADD_AGAIN echo "*************"
-    #TODO_ADD_AGAIN Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
+    echo "******************"
+    echo " test 1/4: show '/opt'"
+    echo "******************"
+    ls /opt
+    echo "***********************"
+    echo " test 2/4: show '/opt/ormr'"
+    echo "***********************"
+    ls /opt/ormr
+    echo "*************************************"
+    echo " test 3/4: run 'reticulate::use_condaenv'"
+    echo "*************************************"
+    Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
+    echo "********************"
+    echo " test 4/4: list packages"
+    echo "********************"
+    Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
 
 %help
 
