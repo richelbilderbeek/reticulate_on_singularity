@@ -1,5 +1,5 @@
 Bootstrap: library
-From: richelbilderbeek/default/plinkr:0.17.2.1
+From: richelbilderbeek/default/plinkr:0.18.0.2
 
 %post
     # Install apt
