@@ -23,7 +23,7 @@ From: richelbilderbeek/default/plinkr:0.18.0.2
     # Create the Conda environment at a system folder
     Rscript -e 'reticulate::conda_create(envname = "/opt/ormr")'
     Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
-    #TODO_ADD_AGAIN Rscript -e 'reticulate::use_python(python = reticulate:::python_binary_path("/opt/ormr"), required = TRUE)'
+    Rscript -e 'reticulate::use_python(python = reticulate:::python_binary_path("/opt/ormr"), required = TRUE)'
     #TODO_ADD_AGAIN Rscript -e 'reticulate::conda_install(packages = "scipy", envname = "/opt/ormr")'
     #TODO_ADD_AGAIN Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
 
