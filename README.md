@@ -11,4 +11,3 @@ to run a Python script on Singularity.
    and [.github/workflows/build_singularity.yaml](.github/workflows/build_singularity.yaml)
    show the final usage
 
-
