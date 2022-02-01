@@ -23,30 +23,30 @@ From: richelbilderbeek/default/plinkr:0.18.0.2
     # Create the Conda environment at a system folder
     Rscript -e 'reticulate::conda_create(envname = "/opt/ormr")'
     Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
-    Rscript -e 'reticulate::use_python(python = reticulate:::python_binary_path("/opt/ormr"), required = TRUE)'
-    Rscript -e 'reticulate::conda_install(packages = "scipy", envname = "/opt/ormr")'
-    Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
+    #TODO_ADD_AGAIN Rscript -e 'reticulate::use_python(python = reticulate:::python_binary_path("/opt/ormr"), required = TRUE)'
+    #TODO_ADD_AGAIN Rscript -e 'reticulate::conda_install(packages = "scipy", envname = "/opt/ormr")'
+    #TODO_ADD_AGAIN Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
 
 %runscript
 exec R --vanilla --silent --no-echo "$@"
 
 %test
-    echo "**************"
-    echo "Show me '/opt'"
-    echo "**************"
-    ls /opt
-    echo "*******************"
-    echo "Show me '/opt/ormr'"
-    echo "*******************"
-    ls /opt/ormr
-    echo "****************************"
-    echo "Run 'reticulate::use_condaenv'"
-    echo "****************************"
-    Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
-    echo "*************"
-    echo "List packages"
-    echo "*************"
-    Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
+    #TODO_ADD_AGAIN echo "**************"
+    #TODO_ADD_AGAIN echo "Show me '/opt'"
+    #TODO_ADD_AGAIN echo "**************"
+    #TODO_ADD_AGAIN ls /opt
+    #TODO_ADD_AGAIN echo "*******************"
+    #TODO_ADD_AGAIN echo "Show me '/opt/ormr'"
+    #TODO_ADD_AGAIN echo "*******************"
+    #TODO_ADD_AGAIN ls /opt/ormr
+    #TODO_ADD_AGAIN echo "****************************"
+    #TODO_ADD_AGAIN echo "Run 'reticulate::use_condaenv'"
+    #TODO_ADD_AGAIN echo "****************************"
+    #TODO_ADD_AGAIN Rscript -e 'reticulate::use_condaenv(condaenv = "/opt/ormr")'
+    #TODO_ADD_AGAIN echo "*************"
+    #TODO_ADD_AGAIN echo "List packages"
+    #TODO_ADD_AGAIN echo "*************"
+    #TODO_ADD_AGAIN Rscript -e 'reticulate:::conda_list_packages(envname = "/opt/ormr")'
 
 %help
 
